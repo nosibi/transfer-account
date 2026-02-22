@@ -30,8 +30,8 @@ Spring의 `@Transactional`이 실제로 어떻게 동작하는지,
 ### 1️⃣ 계좌이체 트랜잭션
 
 - `TransferService.transfer()`
-  ```java
-  @Transactional(propagation = Propagation.REQUIRED)
+  
+  `@Transactional(propagation = Propagation.REQUIRED)`
 
 이 트랜잭션 안에서 다음 작업이 하나의 트랜잭션으로 동작합니다:
 
@@ -41,16 +41,17 @@ Spring의 `@Transactional`이 실제로 어떻게 동작하는지,
 
 ---
 
+
 ### 2️⃣ 로그 트랜잭션 분리
 
 - `TransferLogService.saveSuccessLog()` ---> 모든 작업을 정상적으로 수행할 경우
 - `TransferLogService.saveFailLog()` ---> 작업 도중 RuntimeException이 발생할 경우
 
-```java
-@Transactional(propagation = Propagation.REQUIRES_NEW)
+`@Transactional(propagation = Propagation.REQUIRES_NEW)`
+
+
 
 ---
-
 ## 🔥 실패 시나리오 실험
 
 이 프로젝트의 핵심은 **계좌이체는 롤백되지만, 실패 로그는 남는 구조**를 검증하는 것입니다.
