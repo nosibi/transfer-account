@@ -66,13 +66,14 @@ Spring의 `@Transactional`이 실제로 어떻게 동작하는지,
 ---
 
 ### 🔁 트랜잭션 흐름
+
 TransferService.transfer() (REQUIRED)
-├── withdraw()
-├── ❗ RuntimeException 발생
-└── rollback
+1. withdraw()
+2. ❗ RuntimeException 발생
+3.  rollback
 
 TransferLogService.saveFailLog() (REQUIRES_NEW)
-└── commit
+1. commit
 
 
 ---
