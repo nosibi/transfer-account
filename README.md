@@ -1,4 +1,4 @@
-# 💳 Account Transfer – 트랜잭션 전파 실험
+# 💳 Account Transfer – 트랜잭션 전파 
 
 ## 1️⃣ 프로젝트 소개
 
